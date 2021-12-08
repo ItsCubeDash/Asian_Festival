@@ -1,0 +1,775 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Stick&display=swap'); 
+@font-face {
+	font-family: 'GangOfThree';
+	src: url('../font/gangofthreerusbydaymarius.eot');
+	src: local('☺'), url('../font/gangofthreerusbydaymarius.woff') format('woff'), url('../font/gangofthreerusbydaymarius.ttf') format('truetype'), url('../fonts/gangofthreerusbydaymarius.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'East Sea';
+	src: url('fonts/eastseadokdocyrillic.eot');
+	src: local('☺'), url('../font/eastseadokdocyrillic.woff') format('woff'), url('../font/eastseadokdocyrillic.ttf') format('truetype'), url('../font/eastseadokdocyrillic.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html{
+   height: 100%;
+   color: white;
+}
+
+body{
+   background-color: #000;
+}
+
+*{
+   margin: 0px;
+   padding: 0px;
+}
+head{
+   cursor: none;
+}
+
+.header{
+   top: 0%;   
+   width: 100vw;
+   position: fixed;
+   height: 70px;
+   //background-color: rgba(0, 0, 0, 0.5);  
+   //backdrop-filter: blur(7px);
+   align-items: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   transition: 0.5s;
+   z-index: 99;
+}
+
+.header_bg{
+   height: 70px;
+   width: 100%;
+   background-color: rgba(0, 0, 0, 0.5);  
+   backdrop-filter: blur(7px);
+   position: absolute;   
+}
+
+.header.out{
+   top: -100%;
+}
+
+body{
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+} 
+
+body.lock{
+   overflow: hidden;
+}
+
+.container{
+   width: 100%;
+}
+
+.logo{
+   width: 115px;
+   z-index: 100;
+   padding-left: 5%;
+}
+
+header a{
+   color: white;
+}
+
+.menu{
+   padding: 0px;
+   position: absolute;
+   display: flex;
+   align-items: center;
+   align-content: center;
+   justify-content: space-evenly;
+   flex-direction: column;
+   height: 100%;
+   transition: 1s;
+}
+
+.menu li a{
+   text-transform: uppercase;
+   text-decoration: none;
+   font-size: 30px;
+   color: white;
+   font-family: 'GangOfThree';
+}
+
+.menu li{
+   display: contents;
+   margin-left: 30px;
+   list-style-type: none;
+   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   height: 70px;
+}
+
+.container_menu{
+   display: flex;
+   opacity: 0%;
+   width: 100%;
+   position: fixed;
+   background-color: rgba(0,0,0,.5);
+   backdrop-filter: blur(6px);
+   transition: 1s;
+   align-content: center;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   top: -100%;
+   height: 100%;
+}
+
+.container_menu.show-menu{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   opacity: 100%;;
+   width: 100%;
+   display: flex;
+   position: fixed;
+   background-color: rgba(0,0,0,.5);
+   backdrop-filter: blur(4px);
+   transition: 1s;
+   top: 0;
+}
+
+.menu-btn{
+   padding-right: 5%;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 70px;
+   height: 70px;
+   transition: all .5s ease-in-out;
+   z-index: 100;
+}
+
+.menu-btn__burger{
+   width: 30px;
+   height: 4px;
+   background: #fff;
+   border-radius: 5px;
+   box-shadow: 0 2px 5px rgba(255,101,47,.2);
+   transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after{
+   content: '';
+   position: absolute;
+   width: 40px;
+   height: 4px;
+   background: #fff;
+   border-radius: 5px;
+   box-shadow: 0 2px 5px rgba(255,101,47,.2);
+   transition: all .5s ease-in-out;
+}
+
+.menu-btn__burger::before{
+   transform: translateY(-16px);
+}
+
+.menu-btn__burger::after{
+   transform: translateY(16px);
+}
+
+.header .active{
+   color: blanchedalmond;
+}
+
+/* ANIMATION */
+
+.menu-btn.open .menu-btn__burger {
+   transform: translateX(-50px);
+   background: transparent;
+   box-shadow: none;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+   transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+   transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/* ANIMATION */
+
+.header .show-menu{
+   margin-top: 0px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+   align-content: center;
+   align-items: center;
+   width: 100%;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   height: 100%;
+   transition: 1s;
+}
+
+.lantern{
+   height: 100%;
+   width: 100%;
+   background-image: url(../images/kisspng-sky-lantern-paper-lantern-hot-air-balloon-chinese-wedding-5ac77c2432c943.434583551523022884208.png);
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: contain;
+   position: absolute;
+   top: 400px;
+   transition: ease-in-out 1s;
+   z-index: 10;
+}
+
+.lantern.tap{
+   height: 100%;
+   width: 100%;
+   background-image: url(../images/kisspng-sky-lantern-paper-lantern-hot-air-balloon-chinese-wedding-5ac77c2432c943.434583551523022884208.png);
+   background-repeat: no-repeat;
+   background-position: center;
+   position: absolute;
+   bottom: -400px;
+   top: -100%;
+   z-index: 10;
+   transition: ease-in-out 1s;
+}
+
+.blocks.tap{
+   top: -5%;
+   transition: ease-in-out 1s;
+   position: absolute;
+}
+
+.blocks{
+   display: flex;
+   position: absolute;
+   flex-grow: 1;
+   top: 100%;
+   background-color: rgb(0, 0, 0);
+   transition: ease-in-out 1s;
+   align-items: center;
+   flex-direction: column;
+}
+
+.home{
+   background: url('https://images.unsplash.com/photo-1584006126905-c46851959a78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80') fixed;
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 100%;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+}
+.container_text{
+   display: flex;
+   width: 50%;
+   height: 50%;
+   flex-direction: column;
+   justify-content: center;
+   align-content: flex-start;
+   padding-left: 7%;
+   padding-bottom: 200px;
+}
+
+.home_text{
+	font-family: 'GangOfThree';
+   display: flex;
+   align-items: center;
+   height: calc(100%/3);
+   width: 100%;
+   font-size: 140px;
+}
+
+.home_text2{
+	font-family: 'GangOfThree';
+   display: flex;
+   align-items: center;
+   height: calc(100%/3);
+   width: 100%;
+   font-size: 60px;
+   flex-direction: row;
+   justify-content: flex-start;
+}
+
+#animation, #stickers, #installation, #dish, #costume, #interior, #postcards, #dragon, #decoration{
+   height: 100vh;
+   width: 90%;
+   display: flex;
+   align-items: center;
+   text-align: center;
+   padding: 10px;
+   background: #000;
+   box-shadow: 0px -20px 20px 0px #000;
+   font-family: 'East Sea';
+}
+
+ #animation{
+      font-size: 50px;
+      line-height: 1;
+   }
+
+   #stickers{
+      font-size: 50px;
+      line-height: 1;
+   }
+
+   #interior{
+      font-size: 40px;
+      line-height: 1;
+   }
+
+   #dish{
+      font-size: 50px;
+      line-height: 1;
+   }
+
+   #costume{
+      font-size: 50px;
+      line-height: 1;
+   }
+
+   #installation{
+      font-size: 53px;
+      line-height: 1;
+   }
+
+   #postcards{
+      font-size: 50px;
+      line-height: 1;
+   }
+
+   #decoration{
+      font-size: 45px;
+      line-height: 1;
+   }
+
+   #dragon{
+      font-size: 35px;
+      line-height: 1;
+   }
+
+.footer{
+   min-height: 100%;
+   height: 100px;
+   background-color: rgb(76, 146, 105);
+   flex-direction: column;
+   display: flex;
+   align-items: center;
+   text-align: center;
+   padding: 10px;
+}
+
+@media screen and (max-width: 1199px) {
+
+   .home{
+      width: 100%;
+      background-position: 0 -29px;
+   }
+
+   .container{
+      width: 100%;
+   }
+
+   .container_text{
+      padding-bottom: 150px;
+      height: 40%;
+   }
+
+   .home_text{
+      font-size: 120px;
+   }
+
+   .home_text2{
+      font-size: 50px;
+   }
+
+   #animation{
+      font-size: 50px;
+      line-height: 1;
+   }
+
+   #stickers{
+      font-size: 50px;
+      line-height: 1;
+   }
+
+   #interior{
+      font-size: 40px;
+      line-height: 1;
+   }
+
+   #dish{
+      font-size: 50px;
+      line-height: 1;
+   }
+
+   #costume{
+      font-size: 50px;
+      line-height: 1;
+   }
+
+   #installation{
+      font-size: 53px;
+      line-height: 1;
+   }
+
+   #postcards{
+      font-size: 50px;
+      line-height: 1;
+   }
+
+   #decoration{
+      font-size: 45px;
+      line-height: 1;
+   }
+
+   #dragon{
+      font-size: 35px;
+      line-height: 1;
+   }
+}
+
+@media screen and (max-width: 991px) {
+
+   .home{
+      width: 100%;
+      background-position: 0px 20%;
+      background-size: cover;
+      background-attachment: fixed;
+   }
+
+   .container{
+      width: 100%;
+      margin-left: none;
+   }
+
+   .menu li a{
+      font-size: 25px;
+   }
+
+   .container_text{
+      width: 60%;
+      height: 60%;
+      padding-bottom: 200px;
+      padding-top: 15%;
+   }
+
+   .home_text2{
+      font-size: 45px;
+   }
+
+   #animation{
+      font-size: 35px;
+      line-height: 1;
+   }
+
+   #stickers{
+      font-size: 40px;
+      line-height: 1;
+   }
+
+   #interior{
+      font-size: 30px;
+      line-height: 1;
+   }
+
+   #dish{
+      font-size: 40px;
+      line-height: 1;
+   }
+
+   #costume{
+      font-size: 40px;
+      line-height: 1;
+   }
+
+   #installation{
+      font-size: 40px;
+      line-height: 1;
+   }
+
+   #postcards{
+      font-size: 35px;
+      line-height: 1;
+   }
+
+   #decoration{
+      font-size: 30px;
+      line-height: 1;
+   }
+
+   #dragon{
+      font-size: 26px;
+      line-height: 1;
+   }
+}
+
+@media screen and (max-width: 767px) {
+
+   .home{
+      width: 100%;
+      background-position: 50% 0;
+      background-size: cover;
+   }
+
+   .container{
+      height: 70px;
+   }
+
+   .container_text{
+      width: 100%;
+      padding-left: 0;
+      display: flex;
+      align-items: center;
+   }
+
+   .home_text{
+      font-size: 100px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+   }
+
+   .home_text2{
+      font-size: 40px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+   }
+
+   .logo{
+      width: 120px;
+   }
+
+   .menu-btn__burger{
+      width: 40%;
+   }
+}
+
+@media screen and (max-width: 575px) {
+   
+   .home{
+      width: 100%;
+      background-position: 50% 0;
+      background-size: cover;
+   }
+
+   .menu li a{
+      font-size: 25px;
+   }
+
+   .home_text{
+      font-size: 65px;
+      display: flex;
+      justify-content: center;
+   }
+
+   .home_text2{
+      font-size: 25px;
+   }
+
+   .container{
+      width: 100%;
+   }
+
+   .logo{
+      width: 100px;
+   }
+
+   .lantern{
+      top: 55%;
+      bottom: -300px;
+      background-size: contain;
+      height: 70%;
+   }
+
+   .container_text{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      padding-left: 7%;
+      padding-left: 0;
+   }
+
+   .home_text2{
+      display: flex;
+      font-size: 34px;
+      justify-content: center;
+   }
+
+   #animation{
+      font-size: 30px;
+      line-height: 1;
+   }
+
+   #stickers{
+      font-size: 35px;
+      line-height: 1;
+   }
+
+   #interior{
+      font-size: 23px;
+      line-height: 1;
+   }
+
+   #dish{
+      font-size: 35px;
+      line-height: 1;
+   }
+
+   #costume{
+      font-size: 35px;
+      line-height: 1;
+   }
+
+   #installation{
+      font-size: 35px;
+      line-height: 1;
+   }
+
+   #postcards{
+      font-size: 28px;
+      line-height: 1;
+   }
+
+   #decoration{
+      font-size: 24px;
+      line-height: 1;
+   }
+
+   #dragon{
+      font-size: 20px;
+      line-height: 1;
+   }
+}
+
+@media screen and (max-width: 400px) {
+
+   .home{
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      justify-content: center;
+      background-image: url(https://images.unsplash.com/photo-1584006126905-c46851959a78?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);
+      align-items: flex-start;
+      flex-direction: row;
+      align-content: flex-start;
+   }
+
+   .container_text{
+      width: auto;
+      padding-left: 0;
+      padding-top: 30%;
+      justify-content: flex-start;
+   }
+
+   .home_text{
+      font-size: 60px;
+      text-shadow: 1px 0 10px black;
+   }
+
+    .home_text2{
+      font-size: 31px;
+      text-shadow: 1px 0 10px black;
+   }
+
+   .lantern{
+      top: 55%;
+      bottom: -300px;
+      background-size: cover;
+      height: 70%;
+   }
+
+   .container{
+      width: 100%;
+   }
+
+   .logo{
+      width: 100px;
+   }
+
+   .menu li a{
+      font-size: 23px;
+   }
+
+   .blocks{
+      padding-top: 30%;
+   }
+
+   #animation, #stickers, #installation, #dish, #costume, #interior, #postcards, #dragon, #decoration{
+      height: 100vh;
+      width: 90%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+      background: #000;
+      box-shadow: 0px -20px 20px 0px #000;
+   }
+
+   #animation{
+      font-size: 33px;
+      line-height: 1;
+   }
+
+   #stickers{
+      font-size: 35px;
+      line-height: 1;
+   }
+
+   #interior{
+      font-size: 22px;
+      line-height: 1;
+   }
+
+   #dish{
+      font-size: 35px;
+      line-height: 1;
+   }
+
+   #costume{
+      font-size: 35px;
+      line-height: 1;
+   }
+
+   #installation{
+      font-size: 35px;
+      line-height: 1;
+   }
+
+   #postcards{
+      font-size: 28px;
+      line-height: 1;
+   }
+
+   #decoration{
+      font-size: 24px;
+      line-height: 1;
+   }
+
+   #dragon{
+      font-size: 19px;
+      line-height: 1;
+   }
+}
